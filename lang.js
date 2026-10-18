@@ -34,7 +34,7 @@ if(lang!=="en"){cookie(lang);if(RTL[lang])H.classList.add("cc-rtl");}else cookie
 /* never-translate rules */
 var NOSEL="code,kbd,.ca,#ca,#ca-sec .ca,.ccf-cabox,.ccbrand,a.brand,.brand b,#jupiter-plugin,#iframe-widget,[id^=jupiter],[class*=jupiter],.tok,.sci,.fci,#gres,.cclgp,.cclg,input,textarea,select,svg,script,style";
 var RX=/(\$[A-Z][A-Za-z0-9]{1,11}\b|\b[1-9A-HJ-NP-Za-km-z]{32,44}\b|\b0x[a-fA-F0-9]{40}\b|\b[1-9A-HJ-NP-Za-km-z]{3,6}(?:…|\.\.\.)[1-9A-HJ-NP-Za-km-z]{3,6}\b|Craic (?:Coin|Hub|Swap|Wallet|Bot)|\bCRAIC\b)/;
-var NUM=/^[\s$€£+\-−~≈<>]*[\d][\d.,\s]*(%|[KMBTkmbt]|x|SOL|USD|USDC)?[\s%]*$/;
+var NUM=/^[\s$€£+\-−~≈<>]*[\d][\d.,\s]*(%|[KMBTkmbt]|x|SOL|USD|USDC)?[\s%+]*$/;
 var INL={B:1,STRONG:1,SPAN:1,A:1,EM:1,I:1,U:1,SMALL:1,KBD:1};
 function pad(el){if(lang==="en"||!INL[el.tagName])return;var ns=el.nextSibling,ps=el.previousSibling,lt=el.lastChild,ft=el.firstChild;
  if(ns&&ns.nodeType===3&&/^\s/.test(ns.nodeValue)&&lt&&lt.nodeType===3&&!/\s$/.test(lt.nodeValue)){lt.nodeValue+=" ";ns.nodeValue=ns.nodeValue.replace(/^\s+/,"");}
