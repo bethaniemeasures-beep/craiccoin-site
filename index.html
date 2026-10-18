@@ -452,32 +452,17 @@ section{position:relative;padding:110px 0}
 <p><b>Holder rewards:</b> Hold $CRAIC and we aim to reward you around 0.5% of your holding every week, paid in $CRAIC.</p>
 <p><b>Buy through the exchange:</b> Buy $CRAIC through the Craic Hub Exchange: fees paid in $CRAIC go to the burn wallet, and we aim to start burning once we reach 50 holders. Goal: 250M burned.</p>
 <p><b>Staking:</b> <a href="https://exchange.craiccoin.com/stake">Stake $CRAIC on the Craic Hub Exchange</a>: we aim for stakers to earn around 0.5% a week, paid automatically by the staking pool. Not financial advice. Rewards are aims, not guarantees.</p>
-<p><a class="btn pri" href="https://exchange.craiccoin.com/stake">🔒 Stake $CRAIC</a> <a class="btn" href="https://exchange.craiccoin.com">💱 Buy on the Craic Hub Exchange</a></p>
+<p><a class="btn pri" href="https://exchange.craiccoin.com/stake">🔒 Stake $CRAIC</a> <a class="btn" href="https://exchange.craiccoin.com/rewards">🎁 Rewards</a> <a class="btn" href="https://exchange.craiccoin.com">💱 Buy on the Craic Hub Exchange</a></p>
 <p class="rwnfa">Not financial advice. Rewards, staking and burns are aims, not guarantees.</p>
 </div>
-<form id="rwform" class="glass rv d3" novalidate autocomplete="off">
-<p style="margin:0;font-weight:700;font-size:1.05rem">Register for updates and giveaways <small style="font-weight:400;color:var(--mut)">(optional)</small></p>
-<p class="rwwarn">⚠️ <b>We will never ask for your recovery phrase (seed phrase) or private key.</b> Only paste your public Solana wallet address. Anyone asking for your phrase or key is a scammer.</p>
-<label for="rwaddr">Your Solana wallet address <small>(public address only)</small></label>
-<input type="text" id="rwaddr" name="address" class="notranslate" translate="no" required maxlength="44" spellcheck="false" autocapitalize="off" placeholder="e.g. 7Grd...9mZpW" pattern="[1-9A-HJ-NP-Za-km-z]{32,44}">
-<label for="rwx">Your X handle <small>(optional)</small></label>
-<input type="text" id="rwx" name="x_handle" maxlength="40" spellcheck="false" autocapitalize="off" placeholder="@yourhandle">
-<div class="rwhp" aria-hidden="true"><label>Website<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
-<button class="btn" type="submit" id="rwbtn">Register for updates and giveaways</button>
-<p class="rwmsg" id="rwmsg" role="status" aria-live="polite"></p>
-</form>
+<div id="rwform" class="glass rv d3" style="padding:24px 26px;display:flex;flex-direction:column;gap:12px">
+<p style="margin:0;font-weight:700;font-size:1.15rem">🎁 Holder rewards are on the exchange</p>
+<p style="margin:0;line-height:1.6">Hold $CRAIC and we aim to reward you around 0.5% of your holding every week, paid in $CRAIC. Register your public wallet and see the opt-in list of registered wallets on the Craic Hub Exchange.</p>
+<p class="rwwarn">⚠️ <b>We will never ask for your recovery phrase (seed phrase) or private key.</b></p>
+<p style="margin:0"><a class="btn pri" href="https://exchange.craiccoin.com/rewards">🎁 Register on the Rewards page</a></p>
+<p class="rwnfa">An aim, not a guarantee. Not financial advice.</p>
+</div>
 </div></div></section>
-<script id="rewards-js">(function(){var f=document.getElementById('rwform');if(!f)return;var m=document.getElementById('rwmsg'),b=document.getElementById('rwbtn'),re=/^[1-9A-HJ-NP-Za-km-z]{32,44}$/;
-function say(t,c){m.textContent=t;m.className='rwmsg '+(c||'')}
-f.addEventListener('submit',function(e){e.preventDefault();var a=f.address.value.trim();
-if(/\s/.test(a)){say('Only paste your public wallet address. Never share a recovery phrase or private key.','err');return}
-if(!re.test(a)){say("That doesn't look like a Solana wallet address (32 to 44 letters and numbers).",'err');return}
-b.disabled=true;say('Registering...');
-fetch('https://craic-rewards.pages.dev/api/register',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({address:a,x_handle:f.x_handle.value.trim(),website:f.website.value})})
-.then(function(r){return r.json().catch(function(){return{ok:false}})}).then(function(d){
-if(d&&d.ok){say(d.status==='already_registered'?"This wallet is already registered. You're all set.":"You're registered. Thanks for being part of the Craic community.",'ok');f.reset()}
-else say((d&&d.error)||'Something went wrong. Please try again.','err')})
-.catch(function(){say('Could not reach the server. Please try again.','err')}).then(function(){b.disabled=false})})})();</script>
 
 <section id="tokenomics"><div class="wrap">
 <p class="lbl rv">06 <b>—</b> Token facts</p><h2 class="rv d1">Simple and <span class="g">out in the open.</span></h2>
