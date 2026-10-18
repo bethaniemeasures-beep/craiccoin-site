@@ -1,0 +1,11 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="robots" content="noindex"><meta name="viewport" content="width=device-width,initial-scale=1"><title>$CRAIC visits</title>
+<style>body{font-family:sans-serif;background:#0b1a0f;color:#e8f5e9;padding:20px}td{padding:4px 12px}h2{color:#f5c518}</style></head><body>
+<h2>☘️ craiccoin.com visits</h2><div id="o">Loading…</div><script>
+var A="https://abacus.jasoncameron.dev/get/craiccoin-com/";
+function g(k){return fetch(A+k).then(function(r){return r.json()}).then(function(j){return j.value||0}).catch(function(){return 0})}
+var days=[];for(var i=0;i<14;i++){var t=new Date(Date.now()-i*864e5);days.push(t.toISOString().slice(0,10))}
+var refs=["x","telegram","dexscreener","other","direct"];
+Promise.all([g("total")].concat(refs.map(function(r){return g("ref-"+r)})).concat(days.map(function(d){return g("day-"+d.replace(/-/g,""))}))).then(function(v){
+var h="<p><b>Total visits: "+v[0]+"</b></p><h3>By source</h3><table>";refs.forEach(function(r,i){h+="<tr><td>"+r+"</td><td>"+v[1+i]+"</td></tr>"});
+h+="</table><h3>Last 14 days (UTC)</h3><table>";days.forEach(function(d,i){h+="<tr><td>"+d+"</td><td>"+v[1+refs.length+i]+"</td></tr>"});
+document.getElementById("o").innerHTML=h+"</table>"})</script></body></html>
