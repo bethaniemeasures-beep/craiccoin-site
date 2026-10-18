@@ -300,6 +300,7 @@ section{position:relative;padding:110px 0}
 <li><a href="https://exchange.craiccoin.com/list.html">📋 List a token</a></li>
 <li><a href="#how-to-buy">🍺 How to buy</a></li>
 <li><a href="/whitepaper/">📄 White paper</a></li>
+<li><a href="#rewards">🎁 Holder rewards</a></li>
 <li><a href="#community">💬 Community</a></li>
 <li class="ccsoc"><a class="ccico" href="https://x.com/CraicCoinSol" target="_blank" rel="noopener" aria-label="Craic Coin on X"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg><span class="ccsr">X</span></a><a class="ccico" href="https://t.me/craiccoinsol" target="_blank" rel="noopener" aria-label="Craic Coin on Telegram">✈️<span class="ccsr">Telegram</span></a></li>
 </ul></div></nav><!--/CCNAV-->
@@ -421,11 +422,57 @@ section{position:relative;padding:110px 0}
 <div class="ph glass cur rv d2"><span class="pn">PHASE 02</span><h4>Launch of the Craic Wallet</h4><p class="pt">Self-custody on Solana</p><span class="badge now">Coming soon</span><ul><li>Our own self-custody Solana wallet</li><li>You hold your own keys; we never hold your funds</li><li>Built to work with the Craic Hub Exchange and Craic Hub</li></ul></div>
 <div class="ph glass rv d3"><span class="pn">PHASE 03</span><h4>More $CRAIC utility on the exchange</h4><p class="pt">More reasons to use $CRAIC</p><span class="badge goal">Aim</span><ul><li>More exchange features and discounts paid in $CRAIC</li><li>Graduation from the pump.fun bonding curve to full DEX liquidity</li><li>Broader aggregator coverage, including Jupiter verification</li></ul></div>
 
-<div class="ph glass big rv d4"><span class="pn">PHASE 04</span><h4>Burn progress and more listings</h4><p class="pt">Growing the $CRAIC community</p><span class="badge end">Aim</span><ul><li>Fees paid in $CRAIC are burned, aiming for 250M $CRAIC burned</li><li>More tokens listed on Craic Hub and the exchange</li><li>CoinGecko and CoinMarketCap applications, and larger exchanges as an aim</li></ul></div>
+<div class="ph glass big rv d4"><span class="pn">PHASE 04</span><h4>Burn progress and more listings</h4><p class="pt">Growing the $CRAIC community</p><span class="badge end">Aim</span><ul><li>We aim to begin burning $CRAIC once we reach 50 holders, with every burn shown on our public burn tracker</li><li>Aiming for 250M $CRAIC burned over time</li><li><a href="#rewards">Holder rewards</a>: register your wallet and we aim to reward 1% of the $CRAIC you hold, every week you hold it</li><li>More tokens listed on Craic Hub and the exchange</li><li>CoinGecko and CoinMarketCap applications, and larger exchanges as an aim</li></ul></div>
 </div>
 <p class="xnote rv">These are goals we are working towards. Nothing here is confirmed or guaranteed, and we do not commit to dates.</p>
 <p class="nfa rv">No price targets. Not financial advice.</p>
 </div></section>
+
+<section id="rewards"><div class="wrap">
+<style>
+#rewards .rwgrid{display:grid;grid-template-columns:1.1fr 1fr;gap:22px;margin-top:26px}
+@media(max-width:860px){#rewards .rwgrid{grid-template-columns:1fr}}
+#rewards .rwtxt{padding:24px 26px}#rewards .rwtxt p{margin:0 0 14px;color:var(--ink);line-height:1.6}#rewards .rwtxt p b{color:var(--gold)}
+#rewards .rwtxt .rwnfa{color:var(--mut);font-size:.88rem;margin:0}
+#rewards form{padding:24px 26px;display:flex;flex-direction:column;gap:12px}
+#rewards label{font-weight:600;font-size:.95rem}#rewards label small{color:var(--mut);font-weight:400}
+#rewards input[type=text]{width:100%;box-sizing:border-box;min-height:50px;padding:12px 16px;border-radius:14px;border:1px solid var(--line);background:rgba(0,0,0,.35);color:var(--ink);font-family:var(--mono);font-size:.95rem}
+#rewards input[type=text]:focus{outline:2px solid var(--green);border-color:transparent}
+#rewards .rwwarn{border:1px solid rgba(255,90,90,.55);background:rgba(255,60,60,.1);border-radius:14px;padding:12px 14px;font-size:.9rem;line-height:1.5;margin:0}
+#rewards .rwhp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+#rewards .rwmsg{min-height:1.4em;margin:0;font-size:.95rem}#rewards .rwmsg.ok{color:var(--green)}#rewards .rwmsg.err{color:#ff8a8a}
+#rewards .btn{align-self:flex-start}
+</style>
+<p class="lbl rv">Holder rewards</p><h2 class="rv d1">Hold $CRAIC. <span class="g">Register your wallet.</span></h2>
+<div class="rwgrid">
+<div class="rwtxt glass rv d2">
+<p>$CRAIC is the native token of the <a href="https://exchange.craiccoin.com/">Craic Hub Exchange</a>.</p>
+<p><b>Burns:</b> we aim to begin burning $CRAIC once we reach 50 holders, with every burn shown on our public <a href="https://exchange.craiccoin.com/burn.html">burn tracker</a>.</p>
+<p><b>Holder rewards:</b> register your wallet on craiccoin.com and we aim to reward you with 1% of the $CRAIC you hold, every week you hold it.</p>
+<p class="rwnfa">Not financial advice. Rewards and burns are aims, not guarantees.</p>
+</div>
+<form id="rwform" class="glass rv d3" novalidate autocomplete="off">
+<p class="rwwarn">⚠️ <b>We will never ask for your recovery phrase (seed phrase) or private key.</b> Only paste your public Solana wallet address. Anyone asking for your phrase or key is a scammer.</p>
+<label for="rwaddr">Your Solana wallet address <small>(public address only)</small></label>
+<input type="text" id="rwaddr" name="address" class="notranslate" translate="no" required maxlength="44" spellcheck="false" autocapitalize="off" placeholder="e.g. 7Grd...9mZpW" pattern="[1-9A-HJ-NP-Za-km-z]{32,44}">
+<label for="rwx">Your X handle <small>(optional)</small></label>
+<input type="text" id="rwx" name="x_handle" maxlength="40" spellcheck="false" autocapitalize="off" placeholder="@yourhandle">
+<div class="rwhp" aria-hidden="true"><label>Website<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+<button class="btn pri" type="submit" id="rwbtn">🎁 Register my wallet</button>
+<p class="rwmsg" id="rwmsg" role="status" aria-live="polite"></p>
+</form>
+</div></div></section>
+<script id="rewards-js">(function(){var f=document.getElementById('rwform');if(!f)return;var m=document.getElementById('rwmsg'),b=document.getElementById('rwbtn'),re=/^[1-9A-HJ-NP-Za-km-z]{32,44}$/;
+function say(t,c){m.textContent=t;m.className='rwmsg '+(c||'')}
+f.addEventListener('submit',function(e){e.preventDefault();var a=f.address.value.trim();
+if(/\s/.test(a)){say('Only paste your public wallet address. Never share a recovery phrase or private key.','err');return}
+if(!re.test(a)){say("That doesn't look like a Solana wallet address (32 to 44 letters and numbers).",'err');return}
+b.disabled=true;say('Registering...');
+fetch('https://craic-rewards.pages.dev/api/register',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({address:a,x_handle:f.x_handle.value.trim(),website:f.website.value})})
+.then(function(r){return r.json().catch(function(){return{ok:false}})}).then(function(d){
+if(d&&d.ok){say(d.status==='already_registered'?"This wallet is already registered. You're all set.":"You're registered. Thanks for being part of the Craic community.",'ok');f.reset()}
+else say((d&&d.error)||'Something went wrong. Please try again.','err')})
+.catch(function(){say('Could not reach the server. Please try again.','err')}).then(function(){b.disabled=false})})})();</script>
 
 <section id="tokenomics"><div class="wrap">
 <p class="lbl rv">06 <b>—</b> Token facts</p><h2 class="rv d1">Simple and <span class="g">out in the open.</span></h2>
