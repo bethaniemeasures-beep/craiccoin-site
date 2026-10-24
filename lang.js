@@ -1,4 +1,4 @@
-/* Craic language picker: free Google Translate website element, no key. Shared by craiccoin.com and exchange.craiccoin.com */
+/* Craic language picker: free Google Translate website element, no key. Shared by craiccoin.com and thehubexchange.com */
 (function(){
 if(window.__ccLang)return;window.__ccLang=1;
 var KEY="cc_lang",D=document,H=D.documentElement;
